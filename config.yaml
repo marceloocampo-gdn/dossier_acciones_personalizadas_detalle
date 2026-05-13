@@ -1,0 +1,24 @@
+default_profile: prod
+
+shared:
+  google:
+    service_account_json: "secrets/google_sa.json"
+    sheet_url: "https://docs.google.com/spreadsheets/d/1AjCuYbeZ2JengKZDiki5W6vliIo5vFYNAjjkDwLA2pw/edit?" ## aca va la url de la hoja de google sheets
+
+### Este es el mail que debe ser editor en la hoja de Google = gsheet-runner@export-snow-to-drive.iam.gserviceaccount.com
+
+  snowflake:
+    service_account_json: "secrets/snowflake_sa.json"
+
+  queries:
+    
+    - file: "sql/Consulta1.sql" 
+      worksheet: "Datos"
+      range: "A2"
+
+profiles:
+  test:
+    env: test
+
+  prod:
+    env: prod
